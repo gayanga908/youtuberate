@@ -1,0 +1,29 @@
+<nav></nav>
+<div class="container">
+    <h1 class="bookmark-heading">Bookmarks</h1>
+    <div class="container">
+
+
+        <div *ngFor="let obj of bookmarks ">
+            <div class="col-lg-12 result-outer">
+                <div class="col-lg-12 result-inner">
+            <div class="col-lg-2 bookmark-image-col"><img src="{{obj['thumb']}}" class="img-responsive"> </div>
+            <div class="col-lg-8">
+                <div class="col-lg-12 ">
+                    <a href="https://www.youtube.com/watch?v={{obj['video_id'] }}" target="_blank"><h4 class="result-video-title">{{obj['video'] }}</h4></a>
+                </div>
+                <div class="col-lg-12 result-video-description-col">
+                    <p class="result-video-description">{{obj['video_description'] }}</p>
+                </div>
+            </div>
+            <div class="col-lg-2" align="center">
+                <rating [(ngModel)]="obj['video_score']" [max]="5" [readonly]="true" [float]="true" ></rating>
+                <p class="result-rating-score">{{obj['video_score'] | number:'1.0-1' }}</p>
+            </div>
+
+        </div>
+            </div>
+
+        </div>
+    </div>
+</div>

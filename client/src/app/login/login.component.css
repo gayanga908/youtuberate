@@ -1,0 +1,53 @@
+.login-main-div{
+    margin-top: 13%;
+}
+.login-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 200;
+    font-size: 48px;
+    color: rgb(97,97,97);
+}
+.login-input{
+    width: 80%;
+}
+input:focus         { outline:none; }
+
+/* LABEL ======================================= */
+label                {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label        {
+    top:-20px;
+    font-size:14px;
+    color:#EF6C00;
+}
+
+.login-btn{
+    height: 40px;
+    width: 100px;
+    border-radius: 0px !important;
+    font-family: 'Ubuntu', sans-serif;
+    background: transparent !important;
+    border: 1px solid rgb(245,124,0);
+    color: rgb(245,124,0);
+    font-size: 15px;
+    font-weight: 600;
+}
+.reg-link-div{
+    padding-top: 10px;
+}
+.sign-in-link{
+    font-family: 'Ubuntu', sans-serif;
+
+}

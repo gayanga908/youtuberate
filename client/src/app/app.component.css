@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Ubuntu');
+html, body{
+  /*height: 100%;*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  background: url("../img/website-background-115.jpg");
+  margin: auto;
+  max-width: 1600px;
+
+  /*color: white;*/
+}
+.main-home{
+  background: url("../img/website-background-115.jpg");
+  width: 100%;
+  height:100vh;
+  margin-top: -94px;
+
+}
+.navbar{
+  background: transparent !important;
+  height: 70px;
+  border: none !important;
+}
+
+.navbar a {
+  color: rgb(120,144,156);
+  padding: 8px 16px;
+  /*margin: 8px;*/
+  vertical-align: middle;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+
+}
+.navbar a:hover{
+  background-color: transparent !important;
+  /*color: rgb(255,109,0) !important;*/
+  font-size: 20px;
+}
+input:-webkit-autofill{
+  background-color: transparent !important;
+}
+a.active {
+  color: rgb(245,124,0);
+  font-weight: bold;
+
+  /*background-color: gray;*/
+}
+/*.ui.active.dimmer {*/
+  /*display: block;*/
+  /*opacity: 0.3!important;*/
+/*}*/
+.ui.segment {
+  background: transparent !important;
+  border: none !important;
+}
+.ui.tabular.menu .active.item {
+  background: transparent !important;
+  color: #EF6C00;
+  border-top-width: 1px;
+  border-color: #FFA726;
+  font-weight: 700;
+  margin-bottom: -1px;
+  box-shadow: none;
+  border-radius: .28571429rem .28571429rem 0 0 !important;
+}
+
+input:focus         { outline:none; }
+
+/* LABEL ======================================= */
+label                {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label        {
+  top:-20px;
+  font-size:14px;
+  color:#EF6C00;
+}
+
+.error-block{
+  color: rgb(216,67,21);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+/*sm-tab{*/
+  /*height: 490px !important;*/
+  /*overflow: scroll;*/
+/*}*/
+/*::-webkit-scrollbar {*/
+  /*display: none;*/
+/*}*/
+/*.ui.attached.segment {*/
+  /*border: 1px solid #FFA726;*/
+/*}*/
+/*----------------- Result -----------------------*/
+.result-image-col{
+  padding: 0px !important;
+  margin: auto !important;
+}
+.result-image-col img {
+  /*height: 80% !important;*/
+  width: 100% !important;
+  padding-top: 10px;
+}
+.result-inner{
+  border: 1px solid rgb(187, 191, 200);
+  padding: 20px;
+}
+.result-video-title{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(245,124,0) !important;
+
+}
+.result-video-title:hover{
+  font-weight: 700;
+  color:#EF6C00;
+}
+.result-video-description-col{
+  margin-top: 10px;
+}
+.result-video-description{
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(42, 44, 45);
+}
+.result-aspect-col{
+  margin-top: 15px;
+}
+.result-aspect-col-inner{
+  border-bottom: 1px solid rgb(187, 191, 200) ;
+  border-top: 1px solid rgb(187, 191, 200) ;
+  padding: 8px;
+}
+.result-aspect-col2{
+  border-left: 1px solid rgb(187, 191, 200) ;
+  border-right: 1px solid rgb(187, 191, 200) ;
+}
+.result-aspect-title{
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(245,124,0);
+  font-family: 'Ubuntu', sans-serif;
+}
+.result-aspect-score{
+  color: rgb(42, 44, 45);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+
+}
+.result-aspect-comments{
+  font-family: 'Ubuntu', sans-serif;
+}
+.rating i:before{
+  color: rgb(245,124,0) !important;
+}
+.rating i {
+  color: rgba(245, 124, 0, 0.25) !important;
+}
+.result-rating-score{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 65px;
+  font-weight: 400;
+  color: rgb(245,124,0) !important;
+  margin-bottom: 10px !important;
+}
+.bookmark-button {
+  height: 40px;
+  width: 85%;
+  font-family: 'Ubuntu', sans-serif;
+  background: transparent !important;
+  border: 1px solid rgb(245,124,0);
+  color: rgb(245,124,0);
+  font-size: 15px;
+  font-weight: 600;
+}
+.bookmark-button:hover {
+  height: 40px;
+  width: 85%;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgb(245,124,0) !important;
+  color: #ffffff;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+.result-no-videos{
+  font-size: 20px;
+  margin-top: 50px !important;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(245,124,0);
+}
+.reg-input{
+  width: 500px;
+}
+.reg-title{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 200;
+  font-size: 48px;
+  color: rgb(97,97,97);
+
+}
+.mat-input-element {
+  box-shadow: none !important;
+}
+.reg-input .mat-input-underline {
+
+}
+.reg-btn{
+  height: 40px;
+  width: 100px;
+  border-radius: 0px !important;
+  font-family: 'Ubuntu', sans-serif;
+  background: transparent !important;
+  border: 1px solid rgb(245,124,0);
+  color: rgb(245,124,0);
+  font-size: 15px;
+  font-weight: 600;
+}
+.reg-btn-link{
+  font-family: 'Ubuntu', sans-serif;
+
+}
+.reg-back-link-div{
+  padding-left: 0px;
+}
+/*----------- alerts ------------*/
+.swal2-icon.swal2-success .line {
+  background-color: rgb(245,124,0) !important;
+}
+.swal2-icon.swal2-success .placeholder {
+  border: 4px solid rgba(245,124,0, .2) !important;
+}
+.swal2-icon.swal2-success {
+  border-color: rgb(245,124,0) !important;
+}
+.swal2-modal button.styled {
+  color: #fff;
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+  box-shadow: none;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0px;
+  padding: 10px 32px;
+  margin: 0 5px;
+  cursor: pointer;
+  background: rgb(245,124,0) !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  outline: none !important;
+}
+.swal2-icon.swal2-error {
+  border-color: rgb(245,124,0) !important;
+}
+/*----------- common classes -------------*/
+.text-center{
+  text-align: center !important;
+}
+
+/*--------- media quiries -----------------------*/
+@media (min-width: 768px) {
+ .main-home{
+  background-size: 100% !important;
+}
+}

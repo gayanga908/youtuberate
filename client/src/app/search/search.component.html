@@ -1,0 +1,179 @@
+
+<nav></nav>
+
+<div [ngSwitch]="!ratedVideos || !unratedVideos">
+    <div class="container-fluid main-home" *ngSwitchCase="obj !== null">
+    <div class="container home-main-div"  align="center">
+        <div class="container">
+            <img src="../img/logo3.png">
+        </div>
+        <div class="container home-title-div" >
+            <h3 class="home-title"><span class="home-title-span">Welcome to </span>Youtube RAte </h3>
+        </div>
+        <div class="container home-form-div">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.controls['search_key'].value)">
+                <div class="row">
+                    <md-input-container class=" search-input">
+                        <input mdInput type="text" id="search_key" placeholder="What are you looking for?" [formControl]="searchForm.controls['search_key']"><br>
+                    </md-input-container>
+                </div>
+                <div class="row">
+                    <button md-button type="submit" [disabled]="!searchForm.valid"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </div>
+            </form>
+
+        </div>
+
+            <sm-loader [complete]="!loading" class="active dimmer huge" text="Loading..."></sm-loader>
+
+
+
+    </div>
+    </div>
+    <div class="container" *ngSwitchCase="obj === null">
+
+        <div class="col-lg-12 result-heading-div-outer">
+            <div class="col-lg-6">
+                <h3 class="search-result-heading">Video result</h3>
+            </div>
+            <div class="col-lg-6" align="right">
+                <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.controls['search_key'].value)">
+                    <md-input-container class="result-search-input">
+                        <input mdInput type="text" id="search_key" placeholder="Search here" [formControl]="searchForm.controls['search_key']"><br>
+                    </md-input-container>
+                    <button md-button type="submit" [disabled]="!searchForm.valid">Search</button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+        <!--<img class="loading-img" *ngIf="loading" src="https://cdn.edureka.co/imgver.1488378393/img/loader.gif" />-->
+        <sm-loader [complete]="!loading" class=" active dimmer massive" text="Loading..."></sm-loader>
+
+
+
+        <sm-tabs>
+            <sm-tab title="Rated Videos ( {{ ratedVideos.length }} )">
+                <div *ngIf="ratedVideos && ratedVideos['Novideo'] == null">
+                <div *ngFor="let obj of ratedVideos | orderBy ">
+                    <div class="col-lg-12 result-outer">
+                        <div class="col-lg-12 result-inner">
+                        <div class="col-lg-2 result-image-col"><img src="{{obj['thumb']}}" class="img-responsive"> </div>
+                        <div class="col-lg-8">
+                            <div class="col-lg-12 ">
+                                <a href="https://www.youtube.com/watch?v={{obj['video_id'] }}" target="_blank"><h4 class="result-video-title">{{obj['video'] }}</h4></a>
+                            </div>
+                            <div class="col-lg-12 result-video-description-col">
+                                <p class="result-video-description">{{obj['video_description'] }}</p>
+                            </div>
+                            <div class="col-lg-12 result-aspect-col text-center">
+                                <div class="col-lg-4  result-aspect-col-inner">
+                                    <p class="result-aspect-title">Understandability</p>
+                                    <div *ngIf="obj['score_und'] != 0">
+                                        <div class="col-lg-12 result-aspect-score">{{obj['score_und'] | number:'1.0-1' }}/5</div>
+                                        <div class="col-lg-12 result-aspect-comments">Rated from {{obj['count_und'] }} comments</div>
+                                    </div>
+                                    <div *ngIf="obj['score_und'] == 0">
+                                        <div class="col-lg-12 result-aspect-score">~/5</div>
+                                        <div class="col-lg-12 result-aspect-comments">No comments found</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 result-aspect-col-inner result-aspect-col2">
+                                    <p class="result-aspect-title">Video quality</p>
+                                    <div *ngIf="obj['score_vid'] != 0">
+                                        <div class="col-lg-12 result-aspect-score">{{obj['score_vid'] | number:'1.0-1' }}/5</div>
+                                        <div class="col-lg-12 result-aspect-comments">Rated from {{obj['count_vid'] }} comments</div>
+                                    </div>
+                                    <div *ngIf="obj['score_vid'] == 0">
+                                        <div class="col-lg-12 result-aspect-score">~/5</div>
+                                        <div class="col-lg-12 result-aspect-comments">No comments found</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 result-aspect-col-inner">
+                                    <p class="result-aspect-title">Audio quality</p>
+                                    <div *ngIf="obj['score_aud'] != 0">
+                                        <div class="col-lg-12 result-aspect-score" >{{obj['score_aud'] | number:'1.0-1' }}/5</div>
+                                        <div class="col-lg-12 result-aspect-comments">Rated from {{obj['count_aud'] }} comments</div>
+                                    </div>
+                                    <div *ngIf="obj['score_aud'] == 0">
+                                        <div  class="col-lg-12 result-aspect-score" >~/5</div>
+                                        <div class="col-lg-12 result-aspect-comments">No comments found</div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-2" align="center">
+                            <rating [(ngModel)]="obj['video_score']" [max]="5" [readonly]="true" [float]="true"></rating>
+                            <p class="result-rating-score">{{obj['video_score'] | number:'1.0-1' }}</p>
+                            <div *ngIf="curr" class="col-lg-12">
+                                <button class="bookmark-button" type="submit" (click)="bookmarkVideo( obj)">Bookmark</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                </div>
+                </div>
+
+                <div *ngIf="ratedVideos && ratedVideos['Novideo'] != null">
+
+                    <div class="container text-center">
+                        <h4 class="result-no-videos">No Rated Videos .</h4>
+                    </div>
+
+                </div>
+
+            </sm-tab>
+            <sm-tab title="Unrated Videos ( {{ unratedVideos.length }} )">
+                <div *ngIf="unratedVideos && unratedVideos['Novideo'] == null">
+                <div *ngFor=" let obj of unratedVideos  ">
+
+                    <div class="col-lg-12 result-outer">
+                        <div class="col-lg-12 result-inner">
+                            <div class="col-lg-2 result-image-col"><img src="{{obj['thumb']}}" class="img-responsive"> </div>
+                            <div class="col-lg-8">
+                                <div class="col-lg-12 ">
+                                    <a href="https://www.youtube.com/watch?v={{obj['video_id'] }}" target="_blank"><h4 class="result-video-title">{{obj['video'] }}</h4></a>
+                                </div>
+                                <div class="col-lg-12 result-video-description-col">
+                                    <p class="result-video-description">{{obj['video_description'] }}</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <div *ngIf="unratedVideos && unratedVideos['Novideo'] != null">
+                    <div class="container text-center">
+                        <h4 class="result-no-videos">No Unrated Videos .</h4>
+                    </div>
+                </div>
+
+            </sm-tab>
+        </sm-tabs>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
